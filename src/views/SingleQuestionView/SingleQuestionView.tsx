@@ -4,6 +4,7 @@ import {getSingleQuestionWithAnswersResponse} from "../../types/types";
 import {Spinner} from "../../common/Spinner/Spinner";
 import {useParams} from "react-router-dom";
 import {SingleTaskTable} from "../../components/SingleTaskTable/SingleTaskTable";
+import {Button} from "../../components/Buttons/Button/Button";
 
 export const SingleQuestionView = () =>{
     const {questionId} = useParams()
@@ -27,9 +28,14 @@ export const SingleQuestionView = () =>{
     }
 
     return (
-        <section className={styles.singleQuestionSection}>
-            <h1 className={styles.headerOne}>SingleQuestionView</h1>
-            <SingleTaskTable singleQuestion = {loadingQuestion}/>
-        </section>
+        <>
+            <section className={styles.singleQuestionSection}>
+                <h1 className={styles.headerOne}>SingleQuestionView</h1>
+                <SingleTaskTable singleQuestion = {loadingQuestion}/>
+            </section>
+            <section className={styles.mainSectionButtons}>
+                <Button children = "Add Answer" link="./answers/add"/>
+            </section>
+        </>
     )
 }

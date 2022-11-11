@@ -1,28 +1,31 @@
-import styles from './AddItemView.module.scss'
+import styles from './AddAnswerView.module.scss'
 import React, {FormEvent, useState} from "react";
 import {SubmitButton} from "../../components/Buttons/SubmitButton/SubmitButton";
-import {Link} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 
 
-export const AddItemView  = () => {
+export const AddAnswerView  = () => {
+    const {questionId} = useParams();
 
     const [itemCreated, setItemCreated] = useState(false);
 
     const [itemData, setItemData] = useState({
         author: '',
         summary: '',
+        questionId: ''
     })
 
     const updateItemData = (key: string, value: string) => {
         setItemData(questionData => ({
             ...questionData,
             [key]: value,
+            questionId: String(questionId),
         }));
     };
 
     const sendForm = async (e: FormEvent) => {
         e.preventDefault()
-        const res = await fetch('http://localhost:3001/questions', {
+        const res = await fetch(`http://localhost:3001/questions/${questionId}/answers`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -37,10 +40,10 @@ export const AddItemView  = () => {
     return (
         <>
             {itemCreated
-                ? <h2>Question created. You will find it in <Link to='/questions'>All Questions Tab</Link></h2>
+                ? <h2>Answer added. You will find it in <Link to='./answers/'>Question Tab</Link></h2>
                 : <form onSubmit={sendForm} className={styles.formContainer}>
                     <div className={styles.formTitle}>
-                        Add Question
+                        Add Answer
                     </div>
                     <div className={styles.formGroup}>
                         <label className={styles.formLabel}>
