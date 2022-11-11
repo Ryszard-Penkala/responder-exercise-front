@@ -5,6 +5,8 @@ import {HeaderWrapper} from "./components/Wrappers/HeaderWrapper";
 import { AllQuestionsView } from './views/AllQuestionsView/AllQuestionsView';
 import {MainView} from "./views/MainView/MainView";
 import {NotFoundView} from "./views/NotFoundView/NotFoundView";
+import {SingleQuestionView} from "./views/SingleQuestionView/SingleQuestionView";
+import {DeletedAnswerView} from "./views/DeletedAnswerView/DeletedAnswerView";
 
 const App = () => {
     return (
@@ -14,6 +16,8 @@ const App = () => {
                 <Routes>
                     <Route path="/" element={<MainView/>}/>
                     <Route path="/questions" element={<AllQuestionsView/>}/>
+                    <Route path="/questions/:questionId" element={<SingleQuestionView/>}/>
+                    <Route path="/questions/:questionId/answers/:answerId/deleted" element={<DeletedAnswerView/>}/>
                     <Route path="*" element={<NotFoundView/>}/>
                 </Routes>
             </div>

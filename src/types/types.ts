@@ -1,4 +1,4 @@
-export interface answer {
+export interface answerInterface {
     id: string;
     author: string;
     summary: string;
@@ -9,5 +9,7 @@ export type getAllQuestionsWithAnswersResponse = {
     id: string;
     author: string | null;
     summary: string | null;
-    answers: answer[];
+    answers: answerInterface[] | [];
 }
+
+export type getSingleQuestionWithAnswersResponse = getAllQuestionsWithAnswersResponse
