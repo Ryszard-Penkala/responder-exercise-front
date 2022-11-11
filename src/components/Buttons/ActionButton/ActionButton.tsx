@@ -6,23 +6,27 @@ interface Props {
     buttonText: string;
     buttonType?: 'submit';
     httpBELink: string;
-    answerId: string;
+    answerId?: string;
+    questionId?: string;
     httpMethod: string;
 }
 
-export const ActionButton: React.FC<Props> = ({buttonText, buttonType, httpBELink, httpMethod, answerId}) => {
+export const ActionButton: React.FC<Props> = ({buttonText, buttonType, httpBELink, httpMethod, answerId, questionId}) => {
 
     const navigate = useNavigate();
 
     const navigateToDeletedItemView = () => {
-        navigate(`./answers/${answerId}/deleted`, {replace: true});
+        if (answerId) {
+            return navigate(`./answers/${answerId}/deleted`, {replace: false})
+        } else {
+            return navigate(`./${questionId}/deleted`, {replace: false});
+        }
     }
 
     const handleClick = async (httpBELink: string, httpMethod: string) => {
         const data = await fetch(`${httpBELink}`, {
             method: httpMethod,
         })
-        console.log({data})
         const json = await data.json();
         navigateToDeletedItemView()
         return json;
