@@ -12,6 +12,7 @@ export const MainView = () => {
             </section>
             <section className={styles.mainSectionButtons}>
                 <Button children = "All Questions Tab" link="/questions"/>
+                <Button children = "Add Question" link="/questions/add"/>
             </section>
         </main>
     )

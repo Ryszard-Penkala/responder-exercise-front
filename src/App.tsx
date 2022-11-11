@@ -8,6 +8,7 @@ import {NotFoundView} from "./views/NotFoundView/NotFoundView";
 import {SingleQuestionView} from "./views/SingleQuestionView/SingleQuestionView";
 import {DeletedAnswerView} from "./views/DeletedAnswerView/DeletedAnswerView";
 import {DeletedQuestionView} from "./views/DeletedQuestionView/DeletedQuestionView";
+import {AddItemView} from "./views/AddQuestionView/AddItemView";
 
 const App = () => {
     return (
@@ -17,6 +18,7 @@ const App = () => {
                 <Routes>
                     <Route path="/" element={<MainView/>}/>
                     <Route path="/questions" element={<AllQuestionsView/>}/>
+                    <Route path="/questions/add" element={<AddItemView/>}/>
                     <Route path="/questions/:questionId" element={<SingleQuestionView/>}/>
                     <Route path="/questions/:questionId/deleted" element={<DeletedQuestionView/>}/>
                     <Route path="/questions/:questionId/answers/:answerId/deleted" element={<DeletedAnswerView/>}/>

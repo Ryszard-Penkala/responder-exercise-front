@@ -17,9 +17,9 @@ export const ActionButton: React.FC<Props> = ({buttonText, buttonType, httpBELin
 
     const navigateToDeletedItemView = () => {
         if (answerId) {
-            return navigate(`./answers/${answerId}/deleted`, {replace: false})
+            return navigate(`./answers/${answerId}/deleted`, {replace: true})
         } else {
-            return navigate(`./${questionId}/deleted`, {replace: false});
+            return navigate(`./${questionId}/deleted`, {replace: true});
         }
     }
 
@@ -28,7 +28,9 @@ export const ActionButton: React.FC<Props> = ({buttonText, buttonType, httpBELin
             method: httpMethod,
         })
         const json = await data.json();
-        navigateToDeletedItemView()
+        if (httpMethod==="DELETE"){
+            navigateToDeletedItemView()
+        }
         return json;
     }
 
