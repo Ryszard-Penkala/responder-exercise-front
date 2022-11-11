@@ -1,11 +1,18 @@
-import React, {FormEvent, useState} from "react";
 import styles from "./MainView.module.scss";
-import {Link, useNavigate} from "react-router-dom";
+import {Button} from "../../components/Buttons/Button/Button";
 
 export const MainView = () => {
     return (
-        <div>
-            hej world
-        </div>
+        <main className={styles.mainSectionGroup}>
+            <section className={styles.mainSectionHeader}>
+                <h2>Welcome to the Question Application</h2>
+            </section>
+            <section className={styles.mainSectionParagraph}>
+                Choose which action you would like to take
+            </section>
+            <section className={styles.mainSectionButtons}>
+                <Button children = "All Questions Tab" link="/questions"/>
+            </section>
+        </main>
     )
 }

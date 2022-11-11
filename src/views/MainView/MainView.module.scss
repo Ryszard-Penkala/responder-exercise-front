@@ -1,1 +1,40 @@
+.mainSectionGroup{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-background-secondary);
+  border: 2px solid var(--color-border-primary);
+  width: auto;
+  padding: 50px 20px;
+  height: auto;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+}
 
+.mainSectionGroup > *{
+  margin: 15px 5px;
+}
+
+.mainSectionHeader{
+  font-size: 1rem;
+  text-align: center;
+}
+
+.mainSectionParagraph{
+  display: block;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.mainSectionButtons{
+  display: flex;
+  flex-direction: column;
+}
+
+@media(min-width: 800px){
+  .mainSectionButtons{
+    display: grid;
+    grid-template-columns: 1fr auto;
+  }
+}
