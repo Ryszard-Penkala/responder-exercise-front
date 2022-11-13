@@ -33,6 +33,8 @@
 }
 
 @media(min-width: 800px){
+  .mainSectionGroup{
+  }
   .mainSectionButtons{
     display: grid;
     grid-template-columns: 1fr auto;
