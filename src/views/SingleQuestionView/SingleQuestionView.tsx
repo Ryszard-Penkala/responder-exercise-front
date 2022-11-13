@@ -28,7 +28,7 @@ export const SingleQuestionView = () =>{
     }
 
     return (
-        <>
+        <main className={styles.mainSectionGroup}>
             <section className={styles.singleQuestionSection}>
                 <h1 className={styles.headerOne}>SingleQuestionView</h1>
                 <SingleTaskTable singleQuestion = {loadingQuestion}/>
@@ -36,6 +36,6 @@ export const SingleQuestionView = () =>{
             <section className={styles.mainSectionButtons}>
                 <Button children = "Add Answer" link="./answers/add"/>
             </section>
-        </>
+        </main>
     )
 }

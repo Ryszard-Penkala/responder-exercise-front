@@ -12,7 +12,7 @@ export const AllQuestionsTableRow = (props: Props) => {
         <tr className={styles.tableRow}>
             <td>{props.question.author}</td>
             <td>{props.question.summary}</td>
-            <td><NavLink to={`./${props.question.id}`}>{props.question.id}</NavLink></td>
+            <td><NavLink to={`./${props.question.id}`} className={styles.tableLink}>{props.question.id}</NavLink></td>
             <td><ActionButton buttonText="DELETE" httpBELink={`http://localhost:3001/questions/${props.question.id}`} httpMethod={"DELETE"} questionId={props.question.id}/></td>
         </tr>
     )

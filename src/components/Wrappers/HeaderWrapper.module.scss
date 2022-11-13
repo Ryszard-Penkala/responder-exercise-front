@@ -20,6 +20,9 @@
     text-decoration: none;
     color: var(--color-tertiary);
     font-weight: 300;
+    &:hover{
+      color: var(--color-secondary);
+    }
   }
   .navigationLinkActive{
     margin: 0 15px 0 15px;
@@ -45,4 +48,21 @@ button{
   padding: 0 30px;
 }
 
+@media(max-width: 800px){
+  .navigationHeader{
+    height: auto;
+    display: flex;
+    flex-direction: column-reverse;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    padding: 0 0 15px;
+    .navigationTitle{
+      margin: 10px 0 15px;
+    }
+  }
+  .userPanel{
+    display: none;
+  }
+}
 

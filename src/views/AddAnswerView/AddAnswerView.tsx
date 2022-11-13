@@ -1,7 +1,7 @@
 import styles from './AddAnswerView.module.scss'
 import React, {FormEvent, useState} from "react";
 import {SubmitButton} from "../../components/Buttons/SubmitButton/SubmitButton";
-import {Link, useParams} from "react-router-dom";
+import {useParams} from "react-router-dom";
 
 
 export const AddAnswerView  = () => {
@@ -34,13 +34,14 @@ export const AddAnswerView  = () => {
         });
         const data = await res.json();
         setItemCreated(true);
+        return data
 
     }
 
     return (
         <>
             {itemCreated
-                ? <h2>Answer added. You will find it in <Link to='./answers/'>Question Tab</Link></h2>
+                ? <h2>Answer added. You will find it in <a href={`http://localhost:3000/questions/${questionId}`}>Question Tab</a></h2>
                 : <form onSubmit={sendForm} className={styles.formContainer}>
                     <div className={styles.formTitle}>
                         Add Answer

@@ -6,13 +6,52 @@
   align-items: center;
   padding: 50px 0;
   .headerOne{
-    margin: 50px 0 100px 0
+    margin: 50px 0 50px 0
   }
+}
+
+.answersHeaderOne{
+  margin: 50px 0 20px;
+  font-size: 1.2rem;
 }
 
 .questionTableRow,
 .answerTableRow {
   text-align: center;
-  margin: 15px 15px 0 15px;
-  padding: 15px 25px 0 25px;
+  td {
+    margin: 15px 15px 0 15px;
+    padding: 15px 25px 0 25px;
+  }
 }
+
+.answerTableRow tr th{
+  margin: 0 15px;
+  padding: 0 15px 15px 15px;
+}
+
+.noQuestions{
+  margin: 50px 0;
+  padding: 10px 20px;
+  width: 100%;
+  height: auto;
+  border: none;
+  text-align: center;
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  font-size: 1rem;
+}
+
+
+@media(max-width: 800px) {
+  .singleQuestionTable tr{
+    height: 100%  ;
+    display: flex;
+    flex-direction: column;
+  }
+  .AnswersTable tr{
+    height: 100%  ;
+    display: flex;
+    flex-direction: column;
+  }
+}
+

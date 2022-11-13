@@ -1,7 +1,5 @@
 import styles from './SingleTaskTable.module.scss';
 import {getSingleQuestionWithAnswersResponse} from "../../types/types";
-import {NavLink} from "react-router-dom";
-import {AllQuestionsTableRow} from "../AllTasksTableRow/AllQuestionsTableRow";
 import {AnswersTableRow} from "../AnswersTableRow/AnswersTableRow";
 
 interface Props {
@@ -32,8 +30,14 @@ export const SingleTaskTable = (props: Props) => {
                 </tbody>
             </table>
 
+            <section className={styles.answersHeaderOne}>
+                <h1>
+                    Answers
+                </h1>
+            </section>
+
             {props.singleQuestion.answers.length === 0
-                ? <div>No answers provided yet</div>
+                ? <div className={styles.noQuestions}>No answers provided yet</div>
                 : <table className={styles.AnswersTable}>
                     <thead>
                     <tr>
