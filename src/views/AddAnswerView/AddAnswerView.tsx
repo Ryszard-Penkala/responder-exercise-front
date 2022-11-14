@@ -41,7 +41,7 @@ export const AddAnswerView  = () => {
     return (
         <>
             {itemCreated
-                ? <h2>Answer added. You will find it in <a href={`http://localhost:3000/questions/${questionId}`}>Question Tab</a></h2>
+                ? <h2>Answer added. You will find it in <a href={`https://qapp.networkmanager.pl/questions/${questionId}`}>Question Tab</a></h2>
                 : <form onSubmit={sendForm} className={styles.formContainer}>
                     <div className={styles.formTitle}>
                         Add Answer

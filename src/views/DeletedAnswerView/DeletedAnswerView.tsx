@@ -10,7 +10,7 @@ export const DeletedAnswerView = () => {
         <main className={styles.mainSection}>
             <h2>Answer {answerId} has been deleted</h2>
             <h3>
-                <a href={`http://localhost:3000/questions/${questionId}`} rel="noreferrer">Return to chosen question</a>
+                <a href={`https://qapp.networkmanager.pl/questions/${questionId}`} rel="noreferrer">Return to chosen question</a>
             </h3>
         </main>
     )

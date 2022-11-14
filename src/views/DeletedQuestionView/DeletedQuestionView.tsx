@@ -10,7 +10,7 @@ export const DeletedQuestionView = () => {
         <main className={styles.mainSection}>
             <h2>Question {questionId} has been deleted</h2>
             <h3>
-                <a href={`http://localhost:3000/questions`} rel="noreferrer">Return to All Questions Tab</a>
+                <a href={`https://qapp.networkmanager.pl/questions`} rel="noreferrer">Return to All Questions Tab</a>
             </h3>
         </main>
     )
