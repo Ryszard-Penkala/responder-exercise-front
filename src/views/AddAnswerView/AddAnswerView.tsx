@@ -2,6 +2,7 @@ import styles from './AddAnswerView.module.scss'
 import React, {FormEvent, useState} from "react";
 import {SubmitButton} from "../../components/Buttons/SubmitButton/SubmitButton";
 import {useParams} from "react-router-dom";
+import {apiUrl} from "../../config/api";
 
 
 export const AddAnswerView  = () => {
@@ -25,7 +26,7 @@ export const AddAnswerView  = () => {
 
     const sendForm = async (e: FormEvent) => {
         e.preventDefault()
-        const res = await fetch(`http://localhost:3001/questions/${questionId}/answers`, {
+        const res = await fetch(`${apiUrl}/questions/${questionId}/answers`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

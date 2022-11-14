@@ -2,6 +2,7 @@ import styles from './AddItemView.module.scss'
 import React, {FormEvent, useState} from "react";
 import {SubmitButton} from "../../components/Buttons/SubmitButton/SubmitButton";
 import {Link} from "react-router-dom";
+import {apiUrl} from "../../config/api";
 
 
 export const AddItemView  = () => {
@@ -22,7 +23,7 @@ export const AddItemView  = () => {
 
     const sendForm = async (e: FormEvent) => {
         e.preventDefault()
-        const res = await fetch('http://localhost:3001/questions', {
+        const res = await fetch(`${apiUrl}/questions`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

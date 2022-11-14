@@ -3,6 +3,7 @@ import {getAllQuestionsWithAnswersResponse} from "../../types/types";
 import {Spinner} from "../../common/Spinner/Spinner";
 import styles from "./AllQuestionsView.module.scss"
 import {AllQuestionsTable} from "../../components/AllTasksTable/AllQuestionsTable";
+import {apiUrl} from "../../config/api";
 
 export const AllQuestionsView = () => {
 
@@ -10,7 +11,7 @@ export const AllQuestionsView = () => {
 
     const fetchQuestionsWithAnswers = async () :Promise<void>=> {
         setLoadingQuestions(null);
-        const response = await fetch('http://localhost:3001/questions/');
+        const response = await fetch(`${apiUrl}/questions/`);
         const data = await response.json();
         await setLoadingQuestions(data);
     }
