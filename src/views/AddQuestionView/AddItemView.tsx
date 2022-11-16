@@ -38,7 +38,7 @@ export const AddItemView  = () => {
     return (
         <>
             {itemCreated
-                ? <h2>Question created. You will find it in <Link to='/questions'>All Questions Tab</Link></h2>
+                ? <h2>Question created. You will find it in <a href='https://qapp.networkmanager.pl/questions'>All Questions Tab</a></h2>
                 : <form onSubmit={sendForm} className={styles.formContainer}>
                     <div className={styles.formTitle}>
                         Add Question
